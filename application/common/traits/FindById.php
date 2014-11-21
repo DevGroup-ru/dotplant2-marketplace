@@ -6,6 +6,9 @@ use Yii;
 
 trait FindById
 {
+    /**
+     * @param integer $id
+     */
     public static function findById($id)
     {
         $cache_key = static::className() . ':' . $id;

@@ -2,8 +2,6 @@
 
 namespace frontend\authclients;
 
-use Yii;
-
 class GitHub extends \yii\authclient\clients\GitHub {
     public $scope = 'user,user:email';
 

@@ -2,8 +2,6 @@
 
 namespace frontend\authclients;
 
-use Yii;
-
 class Facebook extends \yii\authclient\clients\Facebook {
     public $scope = 'public_profile,email';
 
