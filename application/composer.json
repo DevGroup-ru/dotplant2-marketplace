@@ -1,0 +1,57 @@
+{
+    "name": "DevGroup-ru/dotplant2-marketplace",
+    "description": "Marketplace for DotPlant2 CMS",
+    "keywords": ["dotplant", "dotplant2", "marketplace", "yii2"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "GPL-3.0+",
+    "support": {
+        "issues": "https://github.com/DevGroup-ru/dotplant2-marketplace/issues?state=open",
+        "source": "https://github.com/DevGroup-ru/dotplant2-marketplace"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "yiisoft/yii2-bootstrap": "*",
+        "yiisoft/yii2-swiftmailer": "*",
+        "yiisoft/yii2-authclient": "*",
+        "yiisoft/yii2-imagine": "*",
+        "bethrezen/yii2-cached-rbac-dbmanager": "*",
+        "kartik-v/yii2-widgets": "dev-master",
+        "kartik-v/yii2-dynagrid": "dev-master",
+        "kartik-v/yii2-datecontrol": "dev-master",
+        "kartik-v/yii2-context-menu": "dev-master",
+        "kartik-v/yii2-field-range": "dev-master",
+        "kartik-v/yii2-label-inplace": "dev-master",
+        "kartik-v/yii2-sortable": "dev-master",
+        "kartik-v/yii2-icons": "dev-master",
+        "kartik-v/yii2-helpers": "*",
+        "kartik-v/yii2-mpdf": "*",
+        "kartik-v/yii2-editable": "*",
+        "kartik-v/bootstrap-fileinput": "dev-master",
+        "vova07/yii2-imperavi-widget": "*",
+        "thiagotalma/yii2-jstree": "*",
+        "yiisoft/yii2-elasticsearch": "*",
+        "2amigos/yii2-translateable-behavior" : "*",
+        "2amigos/yii2-taggable-behavior": "*",
+        "2amigos/yii2-packagist-component" : "*",
+        "2amigos/yii2-arrayquery-component": "*",
+        "cebe/markdown": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
