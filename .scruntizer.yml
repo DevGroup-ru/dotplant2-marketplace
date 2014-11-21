@@ -1,0 +1,5 @@
+build:
+    dependencies:
+        # Runs before inferred commands
+        before:
+            - 'cd application/; curl -sS https://getcomposer.org/installer | php ; php composer.phar install'
