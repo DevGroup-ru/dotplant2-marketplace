@@ -10,6 +10,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\base\ErrorException;
 use yii\base\InvalidParamException;
 use yii\caching\TagDependency;
 use yii\web\BadRequestHttpException;
@@ -121,12 +122,9 @@ class SiteController extends Controller
                     $model->email = null;
                     $model->save();
                 }
-//                if (count($model->errors) > 0) {
-//                    // что-то не так
-//                    echo "<PRE>";
-//                    var_export($model->errors);
-//                    die();
-//                }
+                if (count($model->errors) > 0) {
+                    throw new ErrorException("Temporary error signing up user");
+                }
             }
 
 
@@ -167,7 +165,7 @@ class SiteController extends Controller
         $model->load(Yii::$app->request->post());
 
         if (Yii::$app->request->isPost && $model->validate()) {
-            
+
             $model->username_is_temporary = 0;
             $model->save();
 

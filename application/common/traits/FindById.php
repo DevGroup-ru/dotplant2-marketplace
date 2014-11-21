@@ -4,7 +4,8 @@ namespace common\traits;
 
 use Yii;
 
-trait FindById {
+trait FindById
+{
     public static function findById($id)
     {
         $cache_key = static::className() . ':' . $id;
@@ -31,4 +32,4 @@ trait FindById {
         }
         return $model;
     }
-} 
+}

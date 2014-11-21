@@ -14,6 +14,17 @@ use yii\web\NotFoundHttpException;
  */
 trait LoadModel
 {
+    /**
+     * Loads model, can cause exception if not found or create new if it is empty.
+     * @param string $modelName
+     * @param string $id
+     * @param bool $createIfEmptyId
+     * @param bool $useCache
+     * @param int $cacheLifetime
+     * @param bool $throwException
+     * @return mixed|null
+     * @throws NotFoundHttpException
+     */
     public static function loadModel(
         $modelName,
         $id,

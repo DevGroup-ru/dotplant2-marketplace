@@ -2,7 +2,6 @@
 
 namespace frontend\components;
 
-
 use common\models\User;
 use common\models\UserService;
 use yii\base\ErrorException;
@@ -18,7 +17,7 @@ class AuthClientHelper {
     ];
     /**
      * Finds service record for current logged client and returns corresponding user.
-     * @param $client AuthClient instance with social authenticated details(ie. user attributes)
+     * @param \yii\authclient\BaseClient $client AuthClient instance with social authenticated details(ie. user attributes)
      * @return User or null
      */
     public static function findUserByService($client)
@@ -55,7 +54,7 @@ class AuthClientHelper {
      * Retrieves additional profile information which can be needed for first-login(registration)
      * and which was not provided by first api call.
      * Returns merged user attributes
-     * @param $client
+     * @param \yii\authclient\BaseClient $client
      * @return BaseClient Client with merged attributes
      */
     public static function retrieveAdditionalData($client)
@@ -88,7 +87,7 @@ class AuthClientHelper {
 
     /**
      * Converts service attributes to common\models\User model attributes
-     * @param $client
+     * @param \yii\authclient\BaseClient $client
      * @return array Array of attributes by model type which we can apply by $model->setAttributes()
      */
     public static function mapUserAttributesWithService($client)
@@ -172,4 +171,5 @@ class AuthClientHelper {
         return $result;
     }
 
-} 
+}
+
