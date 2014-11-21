@@ -20,7 +20,7 @@ class AuthClientHelper {
      * @param \yii\authclient\BaseClient $client AuthClient instance with social authenticated details(ie. user attributes)
      * @return User or null
      */
-    public static function findUserByService($client)
+    public static function findUserByService(\yii\authclient\BaseClient $client)
     {
         $serviceType = $client->className();
         if (isset(static::$ServiceIdMapping[$client->className()])) {
@@ -57,7 +57,7 @@ class AuthClientHelper {
      * @param \yii\authclient\BaseClient $client
      * @return BaseClient Client with merged attributes
      */
-    public static function retrieveAdditionalData($client)
+    public static function retrieveAdditionalData(\yii\authclient\BaseClient $client)
     {
         $attributes = $client->getUserAttributes();
 
@@ -90,7 +90,7 @@ class AuthClientHelper {
      * @param \yii\authclient\BaseClient $client
      * @return array Array of attributes by model type which we can apply by $model->setAttributes()
      */
-    public static function mapUserAttributesWithService($client)
+    public static function mapUserAttributesWithService(\yii\authclient\BaseClient $client)
     {
         $mappings = [
             'service' => [

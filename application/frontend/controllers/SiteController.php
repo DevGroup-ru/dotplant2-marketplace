@@ -83,8 +83,8 @@ class SiteController extends Controller
 
     public function successCallback($client)
     {
-        $model  = AuthClientHelper::findUserByService($client);
-        if ($model === null) {
+        $model = AuthClientHelper::findUserByService($client);
+        if (!is_object($model)) {
             // user not found
             $model = new User(['scenario' => 'registerService']);
             $security = new \yii\base\Security();

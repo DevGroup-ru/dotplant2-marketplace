@@ -26,7 +26,7 @@ trait LoadModel
      * @throws NotFoundHttpException
      */
     public static function loadModel(
-        $modelName,
+        string $modelName,
         $id,
         $createIfEmptyId = false,
         $useCache = true,

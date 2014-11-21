@@ -27,7 +27,6 @@ trait FindById
                         ]
                     )
                 );
-
             }
         }
         return $model;
