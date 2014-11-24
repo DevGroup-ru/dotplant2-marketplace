@@ -3,6 +3,7 @@
 namespace common\traits;
 
 use Yii;
+use yii\caching\TagDependency;
 
 trait FindById
 {
@@ -12,8 +13,9 @@ trait FindById
     public static function findById($id)
     {
         $cache_key = static::className() . ':' . $id;
+
         $model = Yii::$app->cache->get($cache_key);
-        if ($model === null) {
+        if (is_object($model) === false) {
             $model = static::findOne($id);
 
             if (is_object($model)) {
@@ -32,6 +34,7 @@ trait FindById
                 );
             }
         }
+
         return $model;
     }
 }
