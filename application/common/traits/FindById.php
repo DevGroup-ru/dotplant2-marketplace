@@ -27,7 +27,7 @@ trait FindById
                     new TagDependency(
                         [
                             'tags' => [
-                                \common\behaviors\TagDependencyHelper::getObjectTag(static::className(), $model->id),
+                                \devgroup\TagDependencyHelper\ActiveRecordHelper::getObjectTag(static::className(), $model->id),
                             ],
                         ]
                     )

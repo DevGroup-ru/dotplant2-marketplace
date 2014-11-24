@@ -59,7 +59,7 @@ trait LoadModel
                     new TagDependency(
                         [
                             'tags' => [
-                                \common\behaviors\TagDependencyHelper::getObjectTag($modelName::className(), $model->id),
+                                \devgroup\TagDependencyHelper\ActiveRecordHelper::getObjectTag($modelName::className(), $model->id),
                             ],
                         ]
                     )

@@ -66,6 +66,7 @@ class m130524_201442_init extends Migration
             'id' => Schema::TYPE_PK,
             'parent_id' => Schema::TYPE_BIGINT . ' UNSIGNED NOT NULL DEFAULT 0',
             'slug' => Schema::TYPE_STRING . '(120) NOT NULL',
+            'sort_order' => Schema::TYPE_BIGINT . ' UNSIGNED NOT NULL DEFAULT 0',
         ], $tableOptions);
 
         // translations table for categoy
@@ -77,6 +78,143 @@ class m130524_201442_init extends Migration
             'description' => Schema::TYPE_TEXT . ' NOT NULL',
         ]);
         $this->createIndex('idx-category-lang', '{{%category_lang}}', ['language', 'category_id'], true);
+
+        $this->batchInsert(
+            '{{%category}}',
+            ['parent_id', 'slug'],
+            [
+                ['0', 'modules'], // 1
+                ['0', 'themes'], // 2
+                ['0', 'widgets'], // 3
+
+                ['2', 'e-commerce'], // 4
+                ['2', 'company'], // 5
+
+                ['3', 'authorization'], // 6
+                ['3', 'social'], // 7
+                ['3', 'e-commerce'], // 8
+                ['3', 'feedback-forms'], // 9
+                ['3', 'backend'], // 10
+                ['3', 'seo'], // 11
+            ]
+        );
+
+        $this->batchInsert(
+            '{{%category_lang}}',
+            ['category_id', 'language', 'name'],
+            [
+                [
+                    1,
+                    'en',
+                    'Modules',
+                ],
+                [
+                    2,
+                    'en',
+                    'Themes',
+                ],
+                [
+                    3,
+                    'en',
+                    'Widgets',
+                ],
+                [
+                    4,
+                    'en',
+                    'E-Commerce',
+                ],
+                [
+                    5,
+                    'en',
+                    'Company',
+                ],
+                [
+                    6,
+                    'en',
+                    'Authorization',
+                ],
+                [
+                    7,
+                    'en',
+                    'Social',
+                ],
+                [
+                    8,
+                    'en',
+                    'E-Commerce',
+                ],
+                [
+                    9,
+                    'en',
+                    'Feedback &amp; Forms',
+                ],
+                [
+                    10,
+                    'en',
+                    'Backend',
+                ],
+                [
+                    11,
+                    'en',
+                    'SEO',
+                ],
+                [
+                    1,
+                    'ru',
+                    'Модули',
+                ],
+                [
+                    2,
+                    'ru',
+                    'Темы',
+                ],
+                [
+                    3,
+                    'ru',
+                    'Виджеты',
+                ],
+                [
+                    4,
+                    'ru',
+                    'E-Commerce',
+                ],
+                [
+                    5,
+                    'ru',
+                    'Сайт компании',
+                ],
+                [
+                    6,
+                    'ru',
+                    'Авторизация',
+                ],
+                [
+                    7,
+                    'ru',
+                    'Социальные сети',
+                ],
+                [
+                    8,
+                    'ru',
+                    'E-Commerce',
+                ],
+                [
+                    9,
+                    'ru',
+                    'Обратная связь &amp; Формы',
+                ],
+                [
+                    10,
+                    'ru',
+                    'Админ-панель',
+                ],
+                [
+                    11,
+                    'ru',
+                    'SEO',
+                ],
+            ]
+        );
 
         // items!
         $this->createTable('{{%item}}', [

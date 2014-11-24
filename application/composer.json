@@ -37,7 +37,9 @@
         "2amigos/yii2-taggable-behavior": "*",
         "2amigos/yii2-packagist-component" : "*",
         "2amigos/yii2-arrayquery-component": "*",
-        "cebe/markdown": "*"
+        "cebe/markdown": "*",
+        "devgroup/yii2-jstree-widget": "*",
+        "devgroup/yii2-tag-dependency-helper": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

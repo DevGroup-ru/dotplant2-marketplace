@@ -1,7 +1,7 @@
 <?php
 namespace common\models;
 
-use common\behaviors\TagDependencyHelper;
+use devgroup\TagDependencyHelper\ActiveRecordHelper;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -52,7 +52,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             TimestampBehavior::className(),
             [
-                'class' => TagDependencyHelper::className(),
+                'class' => ActiveRecordHelper::className(),
             ],
         ];
     }

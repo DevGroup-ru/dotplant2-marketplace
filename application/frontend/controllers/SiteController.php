@@ -137,7 +137,7 @@ class SiteController extends Controller
 
         Yii::$app->user->login($model, 86400, new TagDependency([
             'tags' => [
-                \common\behaviors\TagDependencyHelper::getObjectTag(User::className(), $model->id),
+                \devgroup\TagDependencyHelper\ActiveRecordHelper::getObjectTag(User::className(), $model->id),
             ],
         ]));
 

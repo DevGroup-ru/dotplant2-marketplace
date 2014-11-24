@@ -32,11 +32,56 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
+
+            $translatorItems = [
+                [
+                    'label' => Yii::t('app', 'Translate categories'),
+                    'url' => ['/translate/categories'],
+                ],
+                [
+                    'label' => Yii::t('app', 'Translate items'),
+                    'url' => ['/translate/items'],
+                ]
+            ];
+
+            $moderatorItems = [
+                [
+                    'label' => Yii::t('app', 'Moderate items'),
+                    'url' => ['/moderate/items'],
+                ],
+                [
+                    'label' => Yii::t('app', 'Moderate tags'),
+                    'url' => ['/moderate/tags'],
+                ],
+            ];
+
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'About', 'url' => ['/site/about']],
                 ['label' => 'Contact', 'url' => ['/site/contact']],
-                ['label' => Yii::t('app', 'Admin'), 'url' => '#', 'visible' => Yii::$app->user->can('admin')],
+                [
+                    'label' => Yii::t('app', 'Admin'),
+                    'url' => '#',
+                    'visible' => Yii::$app->user->can('admin'),
+                    'items' => [
+                        [
+                            'label' => Yii::t('app', 'Manage categories'),
+                            'url' => ['/categories/manage'],
+                        ],
+                    ],
+                ],
+                [
+                    'label' => Yii::t('app', 'Translate'),
+                    'url' => '#',
+                    'visible' => Yii::$app->user->can('translator'),
+                    'items' => $translatorItems,
+                ],
+                [
+                    'label' => Yii::t('app', 'Moderate'),
+                    'url' => '#',
+                    'visible' => Yii::$app->user->can('moderator'),
+                    'items' => $moderatorItems,
+                ],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
