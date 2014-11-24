@@ -7,7 +7,7 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
         'authManager' => [
-            'class'=>'\bethrezen\CachedDbManager',
+            'class'=>'yii\rbac\PhpManager',
         ],
     ],
 ];
