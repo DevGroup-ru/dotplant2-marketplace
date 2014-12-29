@@ -19,8 +19,12 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css',
+
     ];
     public $js = [
+        'js/admin.js',
+        '//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

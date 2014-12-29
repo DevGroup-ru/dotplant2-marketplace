@@ -1,22 +1,22 @@
 <?php
 namespace frontend\controllers;
 
-use common\models\UserService;
-use frontend\components\AuthClientHelper;
-use Yii;
 use common\models\LoginForm;
 use common\models\User;
+use common\models\UserService;
+use frontend\components\AuthClientHelper;
+use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use Yii;
 use yii\base\ErrorException;
 use yii\base\InvalidParamException;
 use yii\caching\TagDependency;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
  * Site controller

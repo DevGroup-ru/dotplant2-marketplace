@@ -39,7 +39,8 @@
         "2amigos/yii2-arrayquery-component": "*",
         "cebe/markdown": "*",
         "devgroup/yii2-jstree-widget": "*",
-        "devgroup/yii2-tag-dependency-helper": "*"
+        "devgroup/yii2-tag-dependency-helper": "*",
+        "devgroup/yii2-adjacency-tree": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
